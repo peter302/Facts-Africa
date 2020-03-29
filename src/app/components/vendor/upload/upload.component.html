@@ -20,6 +20,7 @@
             value="{{ buyers.id }}"
             [ngValue]="buyers"
             *ngFor="let buyers of buyers"
+            required
             >{{ buyers.name }}</option
           >
         </select>
@@ -46,7 +47,7 @@
           formControlName="invoice_amount"
           aria-describedby="textHelp"
           placeholder="Enter Amount"
-          
+          required
         />
 
       </div>
