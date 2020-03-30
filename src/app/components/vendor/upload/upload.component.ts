@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { InvoiceService } from 'src/app/_services/invoice/invoice.service';
-import { Validators,FormGroup, FormControl } from '@angular/forms';
+import {Validators,FormGroup, FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { ViewbuyersService } from 'src/app/_services/buyers/viewbuyers.service';
 import { Invoice } from 'src/app/_models/invoice';
 import { Router } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
+
 
 @Component({
   selector: 'app-upload',
@@ -20,11 +21,11 @@ export class UploadComponent implements OnInit {
 
   uploadForm = new FormGroup({
     buyer_id: new FormControl(),
-    invoice_amount: new FormControl('',[Validators.required]),
+    invoice_amount: new FormControl(),
     due_date: new FormControl()
  });
 
-  constructor(private viewbuyersService:ViewbuyersService, 
+  constructor(private viewbuyersService:ViewbuyersService,
     private flashMessage: FlashMessagesService,
     private httpClient: HttpClient,private router: Router,) {}
   ngOnInit() {
